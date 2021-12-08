@@ -1,0 +1,10 @@
+debug=
+androiddebugkey [name]
+android [keypass]
+
+release=
+metroidjump [name]
+keypass [metroidjump]
+azlanrafiq
+noida
+uttarpradesh

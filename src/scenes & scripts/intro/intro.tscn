@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/game-over.png" type="Texture" id=1]
+[ext_resource path="res://scenes & scripts/intro/intro.gd" type="Script" id=2]
+[ext_resource path="res://assets/button.png" type="Texture" id=3]
+
+[node name="intro" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Game-over" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_top = 52.0
+margin_right = 503.0
+margin_bottom = 269.0
+rect_scale = Vector2( 2, 2 )
+text = "Once upon a time, there was an evil scientist by the name of Zodric. He has given you a test, to prove your instinct in a laboratory of horrors. Put yourself in the shoes of his first, powerless, creation and find a way out.
+
+The facility is infested with the monsters he created, who have long since woken up. They are far stronger, yet more horrid than you are. Their deadly energy itself is enough to finish you off. However, they are mindless and may fail to notice you. Therefore, try to jump over them, and you will survive.
+
+Zodric wishes you luck.
+
+Controls:
+- Jump: W - up arrow - space
+- Right: D- right arrow 
+- Left: A - left arrow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Sprite" parent="."]
+position = Vector2( 510, 534 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="Button2"]
+margin_left = -42.75
+margin_top = -8.75
+margin_right = 45.25
+margin_bottom = 11.25
+text = "Proceed >"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button2/Button" to="." method="_on_Button_pressed"]

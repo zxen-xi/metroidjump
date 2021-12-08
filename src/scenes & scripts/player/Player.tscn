@@ -1,0 +1,286 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://assets/dark-knight/attack/frame_05_delay-0.1s.png" type="Texture" id=1]
+[ext_resource path="res://assets/dark-knight/jump-spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/dark-knight/run-spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://assets/dark-knight/idle-spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://assets/dark-knight/attack/frame_07_delay-0.1s.png" type="Texture" id=5]
+[ext_resource path="res://assets/dark-knight/attack/frame_04_delay-0.1s.png" type="Texture" id=6]
+[ext_resource path="res://assets/dark-knight/attack/frame_02_delay-0.1s.png" type="Texture" id=7]
+[ext_resource path="res://assets/dark-knight/attack/frame_03_delay-0.1s.png" type="Texture" id=8]
+[ext_resource path="res://assets/vignette.png" type="Texture" id=9]
+[ext_resource path="res://assets/dark-knight/attack/frame_06_delay-0.1s.png" type="Texture" id=10]
+[ext_resource path="res://assets/dark-knight/attack/frame_01_delay-0.1s.png" type="Texture" id=11]
+[ext_resource path="res://assets/dark-knight/attack/frame_00_delay-0.1s.png" type="Texture" id=12]
+[ext_resource path="res://scenes & scripts/player/Player.gd" type="Script" id=13]
+[ext_resource path="res://assets/mobile-ui/jump-button.png" type="Texture" id=14]
+[ext_resource path="res://assets/mobile-ui/left-button.png" type="Texture" id=15]
+[ext_resource path="res://assets/mobile-ui/right-button.png" type="Texture" id=16]
+[ext_resource path="res://assets/sounds/jump.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/mobile-ui/jump-button-pressed.png" type="Texture" id=18]
+[ext_resource path="res://assets/mobile-ui/left-button-pressed.png" type="Texture" id=19]
+[ext_resource path="res://assets/mobile-ui/right-button-pressed.png" type="Texture" id=20]
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 4 )
+region = Rect2( 840, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 4 )
+region = Rect2( 1680, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 4 )
+region = Rect2( 2520, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 4 )
+region = Rect2( 3360, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 840, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 4 )
+region = Rect2( 840, 840, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 4 )
+region = Rect2( 1680, 840, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 4 )
+region = Rect2( 2520, 840, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 4 )
+region = Rect2( 3360, 840, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 840, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 1680, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 2520, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 3360, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 4200, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 5040, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 5880, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 840, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 1680, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 2 )
+region = Rect2( 2520, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 2 )
+region = Rect2( 3360, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 2 )
+region = Rect2( 4200, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 2 )
+region = Rect2( 5040, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 2 )
+region = Rect2( 5880, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 2 )
+region = Rect2( 6720, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 2 )
+region = Rect2( 7560, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 2 )
+region = Rect2( 8400, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 2 )
+region = Rect2( 9240, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 2 )
+region = Rect2( 10080, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 2 )
+region = Rect2( 10920, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 2 )
+region = Rect2( 11760, 0, 840, 840 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 2 )
+region = Rect2( 12600, 0, 840, 840 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
+"loop": true,
+"name": "jump",
+"speed": 16.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 7.375, 16.5 )
+
+[sub_resource type="Shader" id=50]
+code = "shader_type canvas_item;
+
+uniform sampler2D vignette;
+const vec3 noise_magic = vec3(0.06711056, 0.00583715, 52.9829189);
+uniform float debanding_dither;
+uniform float blur = 0.01;
+uniform float vignette_darkness = -0.0001;
+
+void fragment() {
+	vec3 vignette_color = texture(vignette, UV).rgb;
+	
+	COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, (blur - vignette_color.r) * 4.0).rgb;
+	COLOR.rgb *= texture(vignette, UV).rgb;
+	COLOR.rgb += vignette_darkness;
+	
+	float offset = fract(noise_magic.z * fract(dot(FRAGCOORD.xy, noise_magic.xy)));
+	COLOR.rgb += vec3(offset, 1.0 - offset, offset) * debanding_dither;
+}"
+
+[sub_resource type="ShaderMaterial" id=49]
+shader = SubResource( 50 )
+shader_param/debanding_dither = 0.03
+shader_param/blur = 0.01
+shader_param/vignette_darkness = 0.0
+shader_param/vignette = ExtResource( 9 )
+
+[node name="Player" type="KinematicBody2D"]
+z_index = 2
+script = ExtResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 9 )
+animation = "idle"
+frame = 4
+playing = true
+
+[node name="jump" type="TouchScreenButton" parent="AnimatedSprite"]
+position = Vector2( 900, 250 )
+scale = Vector2( 5, 5 )
+z_index = 2
+normal = ExtResource( 14 )
+pressed = ExtResource( 18 )
+action = "jump"
+
+[node name="left" type="TouchScreenButton" parent="AnimatedSprite"]
+position = Vector2( -1110, 270 )
+scale = Vector2( 5, 5 )
+z_index = 2
+normal = ExtResource( 15 )
+pressed = ExtResource( 19 )
+action = "left"
+
+[node name="right" type="TouchScreenButton" parent="AnimatedSprite"]
+position = Vector2( -770, 270 )
+scale = Vector2( 5, 5 )
+z_index = 2
+normal = ExtResource( 16 )
+pressed = ExtResource( 20 )
+action = "right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.125, 4.5 )
+shape = SubResource( 45 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -0.25, -10.25 )
+current = true
+editor_draw_screen = false
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource( 49 )
+margin_left = -128.0
+margin_top = -90.0
+margin_right = -102.0
+margin_bottom = -68.0
+rect_scale = Vector2( 10, 7 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -0.5, 4 )
+scale = Vector2( 0.226563, 0.28125 )
+texture = ExtResource( 9 )
+color = Color( 0, 1, 0.0627451, 1 )
+energy = 0.5
+
+[node name="jump-sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+volume_db = 1.0
