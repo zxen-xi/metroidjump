@@ -1,0 +1,8 @@
+debug=
+keyuser/alias = androiddebugkey
+keypass = android
+
+release=
+keyuser/alias = metroidjump
+keypass = metroidjump
+

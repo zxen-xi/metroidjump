@@ -8,14 +8,21 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+}
+
 [application]
 
-config/name="platformer-1"
+config/name="metroidjump"
 run/main_scene="res://scenes & scripts/game-start/gamestart.tscn"
-boot_splash/image="res://assets/icon.png"
+boot_splash/image="res://icon.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+
+[autoload]
+
+PlayerVariables="*res://scenes & scripts/globals/player_vars.gd"
 
 [display]
 

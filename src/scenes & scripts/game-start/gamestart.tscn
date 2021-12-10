@@ -44,7 +44,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="main-theme" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 126.5, 68.75 )
 stream = ExtResource( 4 )
 autoplay = true
 

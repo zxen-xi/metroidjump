@@ -1,9 +1,10 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://assets/enemies/heavy_armor_2/idle.png" type="Texture" id=1]
 [ext_resource path="res://assets/enemies/heavy_armor_2/attack.png" type="Texture" id=2]
 [ext_resource path="res://scenes & scripts/enemies/heavy_armor_B/heavy_armor_B.gd" type="Script" id=3]
 [ext_resource path="res://assets/vignette.png" type="Texture" id=4]
+[ext_resource path="res://assets/enemy-marker.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 1 )
@@ -220,7 +221,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 14 )
 animation = "idle"
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -233,5 +234,10 @@ scale = Vector2( 1.92188, 1.81445 )
 texture = ExtResource( 4 )
 color = Color( 0.945098, 0, 1, 1 )
 energy = 0.8
+
+[node name="Enemy-marker" type="Sprite" parent="."]
+position = Vector2( 34, -162 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_heavy_armor_B_body_entered"]

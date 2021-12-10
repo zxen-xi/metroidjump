@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://assets/dark-knight/attack/frame_05_delay-0.1s.png" type="Texture" id=1]
 [ext_resource path="res://assets/dark-knight/jump-spritesheet.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://assets/mobile-ui/jump-button-pressed.png" type="Texture" id=18]
 [ext_resource path="res://assets/mobile-ui/left-button-pressed.png" type="Texture" id=19]
 [ext_resource path="res://assets/mobile-ui/right-button-pressed.png" type="Texture" id=20]
+[ext_resource path="res://assets/health_prog.png" type="Texture" id=21]
+[ext_resource path="res://assets/health_under.png" type="Texture" id=22]
 
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 4 )
@@ -181,7 +183,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 7.375, 16.5 )
+extents = Vector2( 3.5, 16.5 )
 
 [sub_resource type="Shader" id=50]
 code = "shader_type canvas_item;
@@ -218,7 +220,7 @@ script = ExtResource( 13 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 4
+frame = 8
 playing = true
 
 [node name="jump" type="TouchScreenButton" parent="AnimatedSprite"]
@@ -246,7 +248,7 @@ pressed = ExtResource( 20 )
 action = "right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.125, 4.5 )
+position = Vector2( 0.5, 4.5 )
 shape = SubResource( 45 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -282,5 +284,56 @@ color = Color( 0, 1, 0.0627451, 1 )
 energy = 0.5
 
 [node name="jump-sound" type="AudioStreamPlayer2D" parent="."]
+z_index = 1
 stream = ExtResource( 17 )
 volume_db = 1.0
+
+[node name="Healthbar" type="TextureProgress" parent="."]
+margin_left = -8.0
+margin_top = -21.0
+margin_right = 92.0
+margin_bottom = -1.0
+rect_scale = Vector2( 0.25, 0.2 )
+max_value = 75.0
+value = 75.0
+texture_under = ExtResource( 22 )
+texture_progress = ExtResource( 21 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.301961, 1, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="value_label" type="Label" parent="Healthbar"]
+margin_left = -36.0
+margin_right = -20.0
+margin_bottom = 14.0
+rect_scale = Vector2( 1.8, 1.8 )
+text = "75"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Sprite" parent="Healthbar"]
+position = Vector2( 34.5, 10 )
+scale = Vector2( 1.47, 2 )
+z_index = -1
+texture = ExtResource( 22 )
+
+[node name="score" type="Label" parent="."]
+margin_left = -12.0
+margin_top = -30.0
+margin_right = 39.0
+margin_bottom = -16.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthUnder" type="Sprite" parent="score"]
+position = Vector2( 26, 6 )
+scale = Vector2( 0.62, 0.7 )
+z_index = -1
+texture = ExtResource( 22 )

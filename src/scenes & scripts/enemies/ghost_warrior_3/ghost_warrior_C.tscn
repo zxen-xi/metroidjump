@@ -1,9 +1,10 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://assets/enemies/ghost_warrior_3/attack.png" type="Texture" id=1]
 [ext_resource path="res://assets/enemies/ghost_warrior_3/idle.png" type="Texture" id=2]
 [ext_resource path="res://scenes & scripts/enemies/ghost_warrior_3/ghost_warrior_C.gd" type="Script" id=3]
 [ext_resource path="res://assets/vignette.png" type="Texture" id=4]
+[ext_resource path="res://assets/enemy-marker.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 2 )
@@ -239,7 +240,6 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -247,13 +247,18 @@ position = Vector2( 2, -24 )
 shape = SubResource( 54 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 88, -5 )
+position = Vector2( 86, -4 )
 shape = SubResource( 55 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 23.5, -29.4376 )
-scale = Vector2( 1.21094, 2.18066 )
+scale = Vector2( 1, 2.18066 )
 texture = ExtResource( 4 )
 color = Color( 0.972549, 0.494118, 0.0666667, 1 )
+
+[node name="Enemy-marker" type="Sprite" parent="."]
+position = Vector2( -1, -227 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_ghost_warrior_C_body_entered"]

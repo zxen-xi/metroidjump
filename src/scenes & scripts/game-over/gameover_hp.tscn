@@ -1,0 +1,93 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/sounds/gameover.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/game-over.png" type="Texture" id=2]
+[ext_resource path="res://assets/dark-knight/death/frame_15_delay-0.1s.png" type="Texture" id=3]
+[ext_resource path="res://assets/dark-knight/death/frame_03_delay-0.1s.png" type="Texture" id=4]
+[ext_resource path="res://assets/dark-knight/death/frame_07_delay-0.1s.png" type="Texture" id=5]
+[ext_resource path="res://assets/dark-knight/death/frame_13_delay-0.1s.png" type="Texture" id=6]
+[ext_resource path="res://assets/dark-knight/death/frame_11_delay-0.1s.png" type="Texture" id=7]
+[ext_resource path="res://assets/dark-knight/death/frame_02_delay-0.1s.png" type="Texture" id=8]
+[ext_resource path="res://assets/dark-knight/death/frame_10_delay-0.1s.png" type="Texture" id=9]
+[ext_resource path="res://assets/dark-knight/death/frame_04_delay-0.1s.png" type="Texture" id=10]
+[ext_resource path="res://assets/dark-knight/death/frame_05_delay-0.1s.png" type="Texture" id=11]
+[ext_resource path="res://assets/dark-knight/death/frame_09_delay-0.1s.png" type="Texture" id=12]
+[ext_resource path="res://assets/dark-knight/death/frame_06_delay-0.1s.png" type="Texture" id=13]
+[ext_resource path="res://assets/dark-knight/death/frame_08_delay-0.1s.png" type="Texture" id=14]
+[ext_resource path="res://assets/dark-knight/death/frame_12_delay-0.1s.png" type="Texture" id=15]
+[ext_resource path="res://assets/dark-knight/death/frame_01_delay-0.1s.png" type="Texture" id=16]
+[ext_resource path="res://assets/dark-knight/death/frame_14_delay-0.1s.png" type="Texture" id=17]
+[ext_resource path="res://assets/dark-knight/death/frame_00_delay-0.1s.png" type="Texture" id=18]
+[ext_resource path="res://assets/button.png" type="Texture" id=19]
+[ext_resource path="res://scenes & scripts/game-over/gameover.gd" type="Script" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 16 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "death",
+"speed": 8.0
+} ]
+
+[node name="gameover_hp" type="Node2D"]
+scale = Vector2( 4, 4 )
+script = ExtResource( 20 )
+
+[node name="Game-over" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="deathnotif" type="RichTextLabel" parent="."]
+margin_left = 85.0
+margin_top = 65.0
+margin_right = 243.0
+margin_bottom = 95.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "You have DIED!
+Better luck next time ..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Sprite" parent="."]
+position = Vector2( 127, 96.5 )
+texture = ExtResource( 19 )
+
+[node name="mainmenu" type="Button" parent="Button"]
+margin_left = -47.25
+margin_top = -8.75
+margin_right = 47.75
+margin_bottom = 11.25
+text = "Main Menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 117.5, 37 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "death"
+frame = 6
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="fail-sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 125, 62 )
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="score" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 9.75
+margin_right = 152.0
+margin_bottom = 23.75
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button/mainmenu" to="." method="_on_mainmenu_pressed"]
