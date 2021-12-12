@@ -1,8 +1,9 @@
 # metroidjump
 A repository for my indie game, "Metroidjump".
 
-Azlan Rafiq, AIS Noida.
-Metroidjump, created with the _Godot_ game engine.
+Made by Azlan Rafiq, AIS Noida.
+
+Metroidjump, a game of jumping, was created with the _Godot_ game engine.
 
 Both the source code and builds (for windows and android) are located in this repository.
 
